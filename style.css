@@ -1,36 +1,217 @@
-.header{
-    padding: 60px;
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #171c2c;
+    --panel: #252d43;
+    --gold: #ffd45c;
+    --gold-light: #fff4d6;
+    --muted: #b6c1d8;
+    --brown: #754c2c;
+    --green: #73d66b;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--gold-light);
     text-align: center;
-    background: #c9a27b;
-    color: white;
+    font-family: "Courier New", Courier, monospace;
+    margin: 0;
+    padding: 30px 16px;
+}
+
+.game {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    max-width: 720px;
+    margin: 0 auto 28px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    color: var(--gold-light);
+    font-size: clamp(32px, 6vw, 48px);
+    text-shadow: 4px 4px var(--brown);
+    margin: 8px 0 14px;
+}
+
+h2 {
+    color: var(--gold-light);
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.intro {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.gold-panel {
+    background-color: #20283b;
+    border: 3px solid var(--gold);
+    box-shadow: 5px 5px #0d1120;
+    padding: 22px 16px;
+    margin: 24px auto 34px;
+    max-width: 560px;
+}
+
+.gold-panel h2 {
     font-size: 30px;
+    margin-top: 0;
 }
 
-.header h1{
-    font-size: 50px;
+button {
+    background-color: var(--gold);
+    color: var(--background);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 13px 18px;
+    border: 3px solid var(--brown);
+    cursor: pointer;
+    margin: 8px 4px;
+    max-width: 100%;
+    transition: background-color 0.15s ease,
+                transform 0.15s ease;
 }
 
-.header p{
-    font-size: 20px;
-    margin: 10px;
+button:hover {
+    background-color: #ffe89a;
+    transform: translateY(-2px);
 }
 
-.topnav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #c9a27b;
-    color: white;
+button:active {
+    transform: translateY(0);
 }
 
-.topnav a {
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
 }
 
-.topnav a:hover {
-    text-decoration: underline;
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.section-title {
+    color: var(--gold);
+    margin: 32px 0 18px;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.shop,
+.house-card {
+    background-color: var(--panel);
+    border: 3px solid var(--gold);
+    padding: 20px;
+    box-shadow: 5px 5px #0d1120;
+}
+
+.shop h3,
+.house-card h3 {
+    color: var(--green);
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.shop p,
+.house-card p {
+    color: var(--gold-light);
+}
+
+.shop button,
+.house-card button {
+    margin: 10px 4px;
+}
+
+.hint {
+    font-size: 13px !important;
+    color: var(--muted) !important;
+}
+
+.houses-section {
+    margin-top: 34px;
+}
+
+.house-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.house-card {
+    border-color: #9ca9c7;
+    border-radius: 4px;
+}
+
+.house-icon {
+    font-size: 40px !important;
+    margin: 0 0 12px;
+}
+
+.empty-state {
+    background-color: #20283b;
+    padding: 18px;
+    border: 1px dashed #65718c;
+}
+
+.empty-state[hidden] {
+    display: none;
+}
+
+footer {
+    margin-top: 42px;
+    font-size: 12px;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+strong {
+    color: var(--gold);
+}
+
+@media (max-width: 680px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shop,
+    .house-card {
+        padding: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
 }

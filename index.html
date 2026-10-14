@@ -1,27 +1,122 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+    <title>Clicker Kingdom</title>
+
     <link rel="stylesheet" href="style.css">
-    
-    <header class="topnav">
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Discover</a>
-            <a href="#">Create</a>
-            <a href="#">Community</a>
-            <a href="#">About</a>
-        </nav>
-    </header>
+</head>
 
-    <div class="header">
-        <h1>Navn</h1>
-        <p>Beskrivelse</p>
-    </div>
+<body>
+    <main class="game">
 
+        <header>
+            <p class="eyebrow">BUILD YOUR REALM</p>
+            <h1>Clicker Kingdom</h1>
+            <p class="intro">
+                Welcome to your kingdom! Gather gold, build houses,
+                hire workers, and grow your village.
+            </p>
+        </header>
+
+        <section class="gold-panel">
+            <h2>Gold: <span id="gold">0</span></h2>
+
+            <button id="goldButton">
+                Click here to earn gold!
+            </button>
+
+            <p>Earn gold by clicking or hiring workers.</p>
+        </section>
+
+        <h2 class="section-title">Kingdom Shop</h2>
+
+        <div class="shop-grid">
+
+            <!-- WORKERS -->
+            <section class="shop">
+                <h3>Goldsmith</h3>
+
+                <p>Each worker produces 1 gold per second.</p>
+
+                <p>
+                    Workers:
+                    <strong id="workers">0</strong>
+                </p>
+
+                <p>
+                    Housing:
+                    <strong id="housingStatus">0 / 0</strong>
+                </p>
+
+                <button id="workerButton">
+                    Buy Worker (10 gold)
+                </button>
+
+                <p class="hint">
+                    You need an available house for every worker.
+                </p>
+            </section>
+
+            <section class="shop">
+                <h3>Houses</h3>
+
+                <p>
+                    Build houses to provide homes for workers
+                    and their families.
+                </p>
+
+                <p>
+                    Owned Houses:
+                    <strong id="houses">0</strong>
+                </p>
+
+                <p>
+                    Housing Capacity:
+                    <strong id="capacity">0</strong>
+                </p>
+
+                <p>
+                    Available Spaces:
+                    <strong id="availableSpaces">0</strong>
+                </p>
+
+                <button id="houseButton">
+                    Buy House (25 gold)
+                </button>
+
+                <p class="hint">
+                    Each new house provides space for one worker
+                    and their family.
+                </p>
+            </section>
+
+        </div>
+
+        <section class="houses-section">
+
+            <h2 class="section-title">Your Houses</h2>
+
+            <p id="noHouses" class="empty-state">
+                You don't own any houses yet.
+                Buy a house to make room for your workers!
+            </p>
+
+            <div id="houseList" class="house-list">
+                <!-- House cards are created by JavaScript. -->
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Your progress saves automatically in this browser.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
